@@ -18,13 +18,6 @@ const SearchResults =({movies, searchTerm, setMovies, currentPage, setCurrentPag
         }
     }, [location.state, setMovies, setCurrentPage]);   
 
-    const handlePageChange = async (page) =>{
-        const response = await axios.get(`http://www.omdbapi.com/?apikey=${apikey}&s=${searchTerm}&page=${page}`);
-        console.log(response);
-        setMovies(response.data.Search || []);
-        setCurrentPage(page);
-
-    };
 
     const handleFavorite =(movie) => {
         if(favorites.some((fav) => fav.imdbID === movie.imdbID)){
@@ -57,21 +50,6 @@ const SearchResults =({movies, searchTerm, setMovies, currentPage, setCurrentPag
                         : "Add to Favorites"}</button>
                     </div>
             ))}
-        </div>
-
-        <div className="pagination">
-            <button
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-            >
-            Previous
-            </button>
-            
-            <button
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}>
-                Next
-            </button>
         </div>
         </div>);
 };

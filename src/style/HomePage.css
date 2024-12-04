@@ -1,126 +1,68 @@
+
 .home-container {
   text-align: center;
   margin-top: 5rem;
-  animation: fadeIn 1s ease-in-out; /* Fade-in effect for the container */
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  animation: fadeIn 1s ease-in-out; /* Fade-in effect */
+  background: linear-gradient(135deg, #1e1e1e); /* Subtle gradient */
+  border-radius: 10px;
+  padding: 2rem;
+  color: #eaeaea;
 }
 
 .home-container h1 {
-  font-size: 2.5rem;
-  color: #eaeaea;
-  margin-bottom: 1.5rem;
-  animation: slideDown 1s ease-in-out; /* Slide-in for the title */
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  font-size: 3rem;
+  color: cyan;
+  margin-bottom: 2rem;
+  animation: slideDown 1s ease-in-out;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Add subtle text shadow */
 }
 
 .home-container input {
-  width: 60%;
-  padding: 0.75rem;
-  border: none;
+  width: 70%;
+  padding: 1rem;
+  border: 2px solid #00bcd4;
   border-radius: 5px 0 0 5px;
+  font-size: 1.2rem;
   outline: none;
-  font-size: 1rem;
-  animation: slideUp 1s ease-in-out 0.5s; /* Slide-in for the input field */
-  animation-fill-mode: both; /* Retain the final state */
+  background: #121212;
+  color: #eaeaea;
+  transition: border 0.3s, box-shadow 0.3s;
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.home-container input:focus {
+  border-color: cyan;
+  box-shadow: 0 0 10px cyan;
 }
 
 .home-container button {
-  padding: 0.75rem 1rem;
-  border: none;
-  background-color: cyan;
-  color: #121212;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  font-size: 1rem;
+  border: none;
   border-radius: 0 5px 5px 0;
+  background-color: #00bcd4;
+  color: #121212;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  animation: slideUp 1s ease-in-out 0.5s; /* Slide-in for the button */
-  animation-fill-mode: both; /* Retain the final state */
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .home-container button:hover {
-  background-color: #00bcd4;
-  transform: scale(1.1); /* Scale up on hover */
+  background-color: #00a3c1;
+  transform: scale(1.05);
 }
 
 .random-movie-button {
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
   background-color: #ff4081;
-  color: #fff;
-  font-weight: bold;
-  border: none;
+  color: white;
+  font-size: 1.2rem;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  animation: slideUp 1s ease-in-out 0.8s; /* Slide-in for the random movie button */
-  animation-fill-mode: both; /* Retain the final state */
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .random-movie-button:hover {
   background-color: #e91e63;
   transform: scale(1.1);
-}
-
-/* New Styles for Movie Poster Display */
-.movie-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px; /* Adjust space between posters */
-  margin-top: 2rem;
-}
-
-.movie-card {
-  width: 200px; /* Adjust the width of each movie card */
-  height: auto; /* Keep the aspect ratio of the image */
-  overflow: hidden; /* Prevent overflow of image */
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-}
-
-.movie-poster {
-  width: 100%; /* Make the poster fill the card's width */
-  height: 300px; /* Adjust the height */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
-  border-radius: 5px;
-}
-
-.movie-title {
-  text-align: center;
-  font-size: 16px;
-  margin-top: 10px;
-  font-weight: bold;
 }
